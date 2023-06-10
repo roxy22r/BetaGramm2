@@ -45,14 +45,34 @@
     <button type="submit">Submit</button>
   </form>
 </div>
-
+</div>
 <div class="showAllPlayer">
 
-  <li style="color: white;" v-for="player in players ">
-    {{ player.firstname }}
-  </li>
-  <h1>This is an CREATE page</h1>
-</div>
+  <ul style="color: white; list-style: none;" v-for="player in players ">
+    <div class="card">
+      <li class="cardHead"><h4>
+        {{ player.firstname +' '+ player.lastname}}
+        
+      </h4>
+    </li>
+      <div class="cardImg">
+        <li ><img alt="img" src="..\assets\face.png"/></li>
+      </div>
+     <div class="cardInfo">
+
+      
+        <li>IQ: {{player.iq}}</li>
+        <li>Strength: {{player.strength}}</li>
+        <li>Magic: {{player.magic}}</li>
+        <li>Associal: {{player.associal}}</li> 
+        <li>Kindness: {{player.kindnessScore}}</li>
+        <li>Winnings: {{player.winnings}}</li>
+        <li><button>Edit</button></li>
+        <li><button>Play</button></li>
+      </div> 
+    </div>
+  </ul>
+
   </div>
   // eslint-disable-next-line vue/require-v-for-key
 
@@ -122,14 +142,65 @@ export default {
 body {
   background-color: black;
 }
+
 @media (min-width: 1024px) {
 
 .showAllPlayer {
+  width: 100%;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    flex-flow: wrap;
+    gap: 20px;
+    flex-direction: row;
+    
   }
+}
+.cardHead{
+  padding-left: 20%;
+
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 550px;
+  padding:20px;
+  
+  margin-left: 30px;
+  border-color: aqua;
+  background-color: black;
+  color: white;
+  list-style: none;
+}
+.cardInfo{
+  margin-top: 10px;
+  padding-left: 20%;
+  order: 2;
+
+}
+.cardImg{
+
+ width: 100%;
+ padding-left: 20%;
+  
+}
+.cardImg img {
+  order: 1;
+  background-color: antiquewhite;
+  width: 180px;
+  height: 180px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+button{
+  margin-top: 20px;
+  width: 100px;
+  font-weight: bold;
+  border-color: greenyellow;
+  background-color: black;
+  color: white;
 }
 template {}
 form {
