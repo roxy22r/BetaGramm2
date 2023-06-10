@@ -1,30 +1,61 @@
 <template>
-  <form @submit="onSubmit" @reset="onReset">
-    <label>Firstname</label>
-    <input type="text" v-model="form.firstname" required />
-    <label>Lastname</label>
-    <input type="text" v-model="form.lastname" required />
-    <label>Kill Score</label>
-    <input type="number" v-model="form.killscore" required />
-    <label>Kindness Score</label>
-    <input type="number" v-model="form.kindnessScore" required />
-    <label>Associal</label>
-    <input type="number" v-model="form.associal" required />
-    <label>Magic</label>
-    <input type="number" v-model="form.magic" required />
-    <label>IQ</label>
-    <input type="number" v-model="form.iq" required />
-    <label>Strength</label>
-    <input type="number" v-model="form.strength" required />
+    <div class="beta">
+      <div>
+
+        <form @submit="onSubmit" @reset="onReset">
+          <li>
+      <label>Firstname</label>
+      <input type="text" v-model="form.firstname" required />
+    </li>
+    <li>
+
+      <label>Lastname</label>
+      <input type="text" v-model="form.lastname" required />
+    </li>
+    <li>
+
+      <label>Kill Score</label>
+      <input type="number" v-model="form.killscore" required />
+    </li>
+    <li>
+
+      <label>Kindness Score</label>
+      <input type="number" v-model="form.kindnessScore" required />
+    </li>
+    <li>
+
+      <label>Associal</label>
+      <input type="number" v-model="form.associal" required />
+    </li>
+    <li>
+
+      <label>Magic</label>
+      <input type="number" v-model="form.magic" required />
+    </li>
+    <li>
+
+      <label>IQ</label>
+      <input type="number" v-model="form.iq" required />
+    </li>
+    <li>
+
+      <label>Strength</label>
+      <input type="number" v-model="form.strength" required />
+    </li>  
     <button type="submit">Submit</button>
   </form>
-  <div class="beta">
-    <h1>This is an CREATE page</h1>
-  </div>
-  // eslint-disable-next-line vue/require-v-for-key
+</div>
+
+<div class="showAllPlayer">
+
   <li style="color: white;" v-for="player in players ">
     {{ player.firstname }}
   </li>
+  <h1>This is an CREATE page</h1>
+</div>
+  </div>
+  // eslint-disable-next-line vue/require-v-for-key
+
 </template>
 <script>
 export default {
@@ -75,6 +106,13 @@ export default {
       // Reset our form values
       this.form.firstname = ''
       this.form.lastname = ''
+      this.form.killscore= ''
+      this.form.winnings= '' 
+      this.form.loses='' 
+      this.form.associal= '' 
+      this.form.magic =''
+      this.form.iq = ''
+      this.form.strength = ''
       // Trick to reset/clear native browser form validation state
     }
   }
@@ -84,12 +122,26 @@ export default {
 body {
   background-color: black;
 }
+@media (min-width: 1024px) {
 
-template {}
-
-#forme {
-  display: flexbox;
+.showAllPlayer {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
+template {}
+form {
+  display: inline-block;
+  text-align:  center;
+}
+
+form li{
+  display: flex;
+  flex-wrap:wrap;
+  align-items: center;
+  justify-content: center}
 
 
 form label {

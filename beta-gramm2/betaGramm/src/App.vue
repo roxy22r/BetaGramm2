@@ -4,7 +4,6 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-  </header>
     <div class="wrapper">
 
 
@@ -34,15 +33,24 @@ import { RouterLink, RouterView } from 'vue-router'
 
       </nav>
     </div>
-
-
+  </header>
+<div>
+  
   <RouterView />
+</div>
   
 </template>
 
 <style scoped>
 body{
   background-color: black;
+}
+nav{
+  width: 100%;
+  display: flex;
+  margin-left: 25%;
+  
+  justify-content: center;
 }
 nav ul {
   margin-top: 20px;
@@ -52,8 +60,6 @@ nav ul {
   list-style: none;
 }
 nav li {
-  justify-content: flex-end;
-  align-items: flex-end;
   padding-top: 10%;
   padding-left:5% ;
   padding-right:5% ;

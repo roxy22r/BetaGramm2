@@ -1,14 +1,12 @@
 <template>
-    <div>
-        <button>
 
-            <RouterLink to="/createGamer">
-                CREATE
-            </RouterLink>
-        </button>
-    </div>
 <div class="beta">
+  <button>
 
+<RouterLink to="/createGamer">
+    CREATE
+</RouterLink>
+</button>
     <h1>This is an Beta page</h1>
   </div>
 </template>
@@ -21,7 +19,10 @@ body{
   .beta {
     min-height: 100vh;
     display: flex;
+    justify-content: center;
     align-items: center;
   }
 }
+
+
 </style>
