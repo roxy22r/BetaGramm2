@@ -7,7 +7,7 @@
     <RouterLink class="btn btn-dark" to="/createGamer">
       CREATE
     </RouterLink>
-  <h1>This is an Beta page</h1>
+  <h1>This is a Beta page</h1>
 
 </div>
 

@@ -31,6 +31,7 @@ body{
 }
 
   .content{
+    margin-top: 200px;
     order: 1;
     width: 100%;
     display: flex;
