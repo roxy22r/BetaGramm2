@@ -154,8 +154,6 @@
   <!-- eslint-disable no-undef -->
 
 <script>
-import { computed } from '@vue/reactivity';
-import { isGloballyWhitelisted } from '@vue/shared';
 
 export default {
   data() {
@@ -242,7 +240,8 @@ export default {
     // eslint-disable-next-line no-unused-vars
     deltePlayer(event, playerId) {
       event.preventDefault;
-      this.players.splice(playerId, 1);
+      let player = this.players.find(player => player.id === playerId);
+      this.players.splice(player, 1);
       localStorage.setItem('players', JSON.stringify(this.players));
 
     },

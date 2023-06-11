@@ -30,6 +30,10 @@ import { RouterLink, RouterView } from 'vue-router'
             
             <RouterLink to="/betaGramm">BetaGramm</RouterLink>
           </li>
+          <li>
+            
+            <RouterLink to="/gamelist">Gamelist</RouterLink>
+          </li>
         </ul>
 
       </nav>

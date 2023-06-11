@@ -120,7 +120,10 @@ header{
 
 }
 .glitch {
-  position: relative;
+  margin-top: 10%;
+  order: 1;
+  display: flex;
+  justify-content: center;
   color: white;
   font-size: 48px;
   animation: glitch-effect 1s infinite;
