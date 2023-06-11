@@ -12,4 +12,5 @@ Well we should've done tinyer steps
 ### Creating a form
 We stuggled to send the form data to the logic part from Vue.
 The solution was quite simple and easy in retrospect, but the problem was that it was very unusual for us that the logic was also in the same file. Conclusion don't be afraid of new things even if they are not your personal preference.
-
+## Usecase Diagramm
+![image](https://github.com/roxy22r/BetaGramm2/assets/51272296/f71dbc3a-dfed-44fb-be32-ec6c2d4c104e)
