@@ -42,17 +42,21 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
+
 body{
   background-color: black;
 }
 nav{
-  width: 100%;
+  position: relative;
   display: flex;
-  margin-left: 25%;
-  
   justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  
 }
 nav ul {
+  
   margin-top: 20px;
   padding: 0;
   display: flex;
@@ -60,6 +64,7 @@ nav ul {
   list-style: none;
 }
 nav li {
+
   padding-top: 10%;
   padding-left:5% ;
   padding-right:5% ;
@@ -84,7 +89,7 @@ nav li:hover {
   color: #fff;
   animation: navSizeOnHover;
   animation-duration: 0.2s;
-  animation-delay: 30ms;
+  animation-delay: 0.5s;
   animation-fill-mode: forwards;
 
 

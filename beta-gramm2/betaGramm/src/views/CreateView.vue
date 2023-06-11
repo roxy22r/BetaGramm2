@@ -44,12 +44,12 @@
       <label>Strength</label>
       <input type="number" v-model="form.strength" required />
     </li>  
-    <button type="submit">Submit</button>
+    <button type="submit" class="btn btn-dark BG_btn">Submit</button>
   </form>
 </div>
 </div>
-<button @click="fight">FIGHT</button>
-<button @click="resetfighter">clear Fighters</button>
+<button class="btn btn-dark BG_btn" @click="fight">FIGHT</button>
+<button class="btn btn-dark BG_btn" @click="resetfighter">clear Fighters</button>
 
 <div class="showAllPlayer">
 
@@ -72,9 +72,10 @@
         <li>Associal: {{player.associal}}</li> 
         <li>Kindness: {{player.kindnessScore}}</li>
         <li>Winnings: {{player.winnings}}</li>
-        <button v-on:click="deltePlayer($event,player.id)">Delete</button>
-        <li><button >Edit</button></li>
-        <li><button  v-on:click="onPlay($event,player.id)">Play</button></li>
+
+        <button type="button" class="btn btn-dark BG_btn"  v-on:click="deltePlayer($event,player.id)">Delete</button>
+        <button type="button" class="btn btn-dark BG_btn" >Edit</button>
+        <li><button type="button" class="btn btn-dark BG_btn" v-on:click="onPlay($event,player.id)">Play</button></li>
       </div> 
     </div>
   </ul>
@@ -290,14 +291,7 @@ body {
   justify-content: center;
 }
 
-button{
-  margin-top: 20px;
-  width: 100px;
-  font-weight: bold;
-  border-color: greenyellow;
-  background-color: black;
-  color: white;
-}
+
 template {}
 form {
 

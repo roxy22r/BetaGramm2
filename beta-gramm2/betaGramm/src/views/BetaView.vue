@@ -7,6 +7,7 @@
     CREATE
 </RouterLink>
 </button>
+
     <h1>This is an Beta page</h1>
   </div>
 </template>

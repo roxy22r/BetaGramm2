@@ -71,3 +71,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.BG_btn{
+  margin-top: 20px;
+  width: 100px;
+  font-weight: bold;
+  border-color: greenyellow !important;
+  background-color: black !important;
+  color: white;
+  margin-right: 20px;
+  margin: 10px !important;
+}
