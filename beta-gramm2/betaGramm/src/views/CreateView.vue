@@ -49,6 +49,8 @@
 </div>
 </div>
 <button @click="fight">FIGHT</button>
+<button @click="resetfighter">clear Fighters</button>
+
 <div class="showAllPlayer">
 
   <ul style="color: white; list-style: none;" v-for="player in players ">
@@ -68,6 +70,7 @@
         <li>Associal: {{player.associal}}</li> 
         <li>Kindness: {{player.kindnessScore}}</li>
         <li>Winnings: {{player.winnings}}</li>
+        <button v-on:click="deltePlayer($event,player.id)">Delete</button>
         <li><button >Edit</button></li>
         <li><button  v-on:click="onPlay($event,player.id)">Play</button></li>
       </div> 
@@ -75,7 +78,6 @@
   </ul>
 
   </div>
-  // eslint-disable-next-line vue/require-v-for-key
 
 </template>
   <!-- eslint-disable no-undef -->
@@ -95,20 +97,8 @@ export default {
         strength: 0,
 
       },
-      players: [
-        {
-          id:0,
-          firstname: "Gunter",
-          lastname: "Melloe",
-          killscore: 0,
-          winnings: 1,
-          loses: 30,
-          associal: 20,
-          magic: 1,
-          iq: 150,
-          strength: 20
-        }
-      ],
+      players:JSON.parse(localStorage.getItem('players') || '[]')
+      ,
       playerOne: {
           id:0,
           firstname: "",
@@ -150,7 +140,21 @@ export default {
         iq: this.form.iq,
         strength: this.form.strength
       });
+      let newPlayer = {
+        id:    this.players.length,
+        firstname: this.form.firstname,
+        lastname: this.form.lastname,
+        winnings: 0,
+        loses: 0,
+        killscore: this.form.killscore,
+        kindnessScore: this.form.associal,
+        magic: this.form.magic,
+        iq: this.form.iq,
+        strength: this.form.strength
+      }
       alert(JSON.stringify(this.players))
+      localStorage.setItem('players', JSON.stringify(this.players))
+
     },
     onReset(event) {
       event.preventDefault()
@@ -165,6 +169,13 @@ export default {
       this.form.iq = ''
       this.form.strength = ''
     },
+    // eslint-disable-next-line no-unused-vars
+    deltePlayer(event,playerId){
+      event.preventDefault;
+      this.players.splice(playerId,1);
+      localStorage.setItem('players', JSON.stringify(this.players));
+
+    },
     onPlay(event,playerId){
       if(!this.isPlayerOneSet){
 
@@ -174,7 +185,10 @@ export default {
         this.isPlayerOneSet = true;
     }
     else if (!this.isPlayerTwoSet& this.playerOne.id!=playerId){
-          console.log("setSecond");
+        console.log(playerId);      
+        this.playerTwo = this.players[playerId];
+        console.log(this.playerTwo);
+        this.isPlayerTwoSet = true;
       }
     else {
         console.log("Please remove one of the Player or both to fight the next Player");
@@ -186,19 +200,25 @@ export default {
       // eslint-disable-next-line no-unused-vars
       let strikeCount =0;
       strikeCount+= this.playerOne.killscore>this.playerTwo.strength;
-      strikeCount+= this.playerOne.associal>this.playerTwo.strength;
-      strikeCount+= this.playerOne.magic>this.playerTwo.strength;
-      strikeCount+= this.playerOne.iq>this.playerTwo.strength;
+      strikeCount+= this.playerOne.associal>this.playerTwo.associal;
+      strikeCount+= this.playerOne.magic>this.playerTwo.magic;
+      strikeCount+= this.playerOne.iq>this.playerTwo.iq;
       strikeCount+= this.playerOne.strength>this.playerTwo.strength;
+      console.log(strikeCount)
       if(strikeCount>2){
           console.log(this.playerOne.firstname+" "+this.playerOne.lastname+" is the winner ");
           this.playerOne.winnings+=1;
       }else{
-        console.log(this.playerOne.firstname+" "+this.playerOne.lastname+" is the winner ");
+        console.log(this.playerTwo.firstname+" "+this.playerTwo.lastname+" is the winner ");
       }
     },
-  
-
+    resetfighter(event){
+      event.preventDefault();
+      this.playerOne = null;
+      this.playerTwo = null;
+      this.isPlayerOneSet = false;
+      this.isPlayerTwoSet = false;  
+    }
   }
 }
 </script>
