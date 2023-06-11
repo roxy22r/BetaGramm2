@@ -1,8 +1,10 @@
+<!-- eslint-disable no-undef -->
 <template>
     <div class="beta">
       <div>
-
+        <h1 class="centerTitle">Create new Player</h1>
         <form @submit="onSubmit" @reset="onReset">
+
           <li>
       <label>Firstname</label>
       <input type="text" v-model="form.firstname" required />
@@ -46,6 +48,7 @@
   </form>
 </div>
 </div>
+<button @click="fight">FIGHT</button>
 <div class="showAllPlayer">
 
   <ul style="color: white; list-style: none;" v-for="player in players ">
@@ -59,16 +62,14 @@
         <li ><img alt="img" src="..\assets\face.png"/></li>
       </div>
      <div class="cardInfo">
-
-      
         <li>IQ: {{player.iq}}</li>
         <li>Strength: {{player.strength}}</li>
         <li>Magic: {{player.magic}}</li>
         <li>Associal: {{player.associal}}</li> 
         <li>Kindness: {{player.kindnessScore}}</li>
         <li>Winnings: {{player.winnings}}</li>
-        <li><button>Edit</button></li>
-        <li><button>Play</button></li>
+        <li><button >Edit</button></li>
+        <li><button  v-on:click="onPlay($event,player.id)">Play</button></li>
       </div> 
     </div>
   </ul>
@@ -77,6 +78,8 @@
   // eslint-disable-next-line vue/require-v-for-key
 
 </template>
+  <!-- eslint-disable no-undef -->
+
 <script>
 export default {
   data() {
@@ -94,6 +97,7 @@ export default {
       },
       players: [
         {
+          id:0,
           firstname: "Gunter",
           lastname: "Melloe",
           killscore: 0,
@@ -104,13 +108,40 @@ export default {
           iq: 150,
           strength: 20
         }
-      ]
+      ],
+      playerOne: {
+          id:0,
+          firstname: "",
+          lastname: "",
+          killscore: 0,
+          winnings: 0,
+          loses: 0,
+          associal: 0,
+          magic: 0,
+          iq: 0,
+          strength: 0
+        },
+      playerTwo:{
+          id:null,
+          firstname: "",
+          lastname: "",
+          killscore: 0,
+          winnings: 0,
+          loses: 0,
+          associal: 0,
+          magic: 0,
+          iq: 0,
+          strength: 0},
+      isPlayerOneSet:false,
+      isPlayerTwoSet:false,
+      countPlayer:0,
     }
   },
   methods: {
     onSubmit(event) {
       event.preventDefault()
       this.players.push({
+        id:    this.players.length,
         firstname: this.form.firstname,
         lastname: this.form.lastname,
         killscore: this.form.killscore,
@@ -133,8 +164,41 @@ export default {
       this.form.magic =''
       this.form.iq = ''
       this.form.strength = ''
-      // Trick to reset/clear native browser form validation state
+    },
+    onPlay(event,playerId){
+      if(!this.isPlayerOneSet){
+
+        console.log(playerId);      
+        this.playerOne = this.players[playerId];
+        console.log(this.playerOne);
+        this.isPlayerOneSet = true;
     }
+    else if (!this.isPlayerTwoSet& this.playerOne.id!=playerId){
+          console.log("setSecond");
+      }
+    else {
+        console.log("Please remove one of the Player or both to fight the next Player");
+      }
+      
+    },
+    fight(event){
+      event.preventDefault();
+      // eslint-disable-next-line no-unused-vars
+      let strikeCount =0;
+      strikeCount+= this.playerOne.killscore>this.playerTwo.strength;
+      strikeCount+= this.playerOne.associal>this.playerTwo.strength;
+      strikeCount+= this.playerOne.magic>this.playerTwo.strength;
+      strikeCount+= this.playerOne.iq>this.playerTwo.strength;
+      strikeCount+= this.playerOne.strength>this.playerTwo.strength;
+      if(strikeCount>2){
+          console.log(this.playerOne.firstname+" "+this.playerOne.lastname+" is the winner ");
+          this.playerOne.winnings+=1;
+      }else{
+        console.log(this.playerOne.firstname+" "+this.playerOne.lastname+" is the winner ");
+      }
+    },
+  
+
   }
 }
 </script>
@@ -142,11 +206,17 @@ export default {
 body {
   background-color: black;
 }
+.centerTitle{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
 
 @media (min-width: 1024px) {
 
 .showAllPlayer {
-  width: 100%;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
@@ -177,7 +247,11 @@ body {
   margin-top: 10px;
   padding-left: 20%;
   order: 2;
+  text-align: left;
 
+}
+.cardInfo li {
+  text-align: left;
 }
 .cardImg{
 
@@ -204,6 +278,8 @@ button{
 }
 template {}
 form {
+
+  width: 100%;
   display: inline-block;
   text-align:  center;
 }
@@ -211,8 +287,28 @@ form {
 form li{
   display: flex;
   flex-wrap:wrap;
-  align-items: center;
-  justify-content: center}
+  margin-top: 10px;
+  align-items: left;
+  text-align: left;
+  justify-content: left
+}
+form li input{
+  background-color: black;
+  border-color: turquoise;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 300px;
+  height: 30px;
+  border-radius: 10px;
+}
+form li label{
+  margin-right: 30px;
+  
+  width: 100px;
+}
+
 
 
 form label {

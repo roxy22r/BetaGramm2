@@ -3,14 +3,20 @@ import TheWelcome from '../components/TheWelcome.vue'
 </script>
 
 <template>
-      <TheWelcome />
+  
+  
 
   <main>
+
   </main>
 </template>
 <style>
 body{
   background-color: black;
+  color: aliceblue;
+}
+.wellcome{
+  padding-bottom: 100%;
 }
 
 </style>
