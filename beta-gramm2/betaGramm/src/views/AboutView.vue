@@ -26,20 +26,28 @@ In conclusion, Betagramm is a website that was created by three Vue beginners wh
 <style>
 
 body{
-  display: flex;
-  flex-wrap: wrap;
+
   background-color: black;
 }
-@media (min-width: 1024px) {
-  .about {
 
-    min-height:0vh;
-    margin-top: 200%;
-
-  }
   .content{
-    margin-top: -60%;
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+  }
 
+  @media (min-width: 1024px) {
+  .about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
   }
 }
+
+
 </style>

@@ -4,10 +4,11 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
+
     <div class="wrapper">
+      
 
-
-      <nav>
+        <nav>
         <ul>
           <div>
 
@@ -33,12 +34,12 @@ import { RouterLink, RouterView } from 'vue-router'
 
       </nav>
     </div>
-  </header>
-<div>
-  
-  <RouterView />
-</div>
-  
+  <div>
+    
+  </div>
+</header>
+<RouterView />
+
 </template>
 
 <style scoped>
@@ -46,13 +47,17 @@ import { RouterLink, RouterView } from 'vue-router'
 body{
   background-color: black;
 }
-nav{
-  position: relative;
+header{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
-  flex-wrap: wrap;
+}
+nav{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
+  order: 1;
   
 }
 nav ul {
