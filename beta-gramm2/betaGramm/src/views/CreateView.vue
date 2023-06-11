@@ -64,6 +64,8 @@
         <li ><img alt="img" src="..\assets\face.png"/></li>
       </div>
      <div class="cardInfo">
+      <li>ID: {{player.id}}</li>
+
         <li>IQ: {{player.iq}}</li>
         <li>Strength: {{player.strength}}</li>
         <li>Magic: {{player.magic}}</li>
@@ -112,7 +114,7 @@ export default {
           strength: 0
         },
       playerTwo:{
-          id:null,
+          id:0,
           firstname: "",
           lastname: "",
           killscore: 0,
@@ -124,24 +126,16 @@ export default {
           strength: 0},
       isPlayerOneSet:false,
       isPlayerTwoSet:false,
-      countPlayer:0,
+      countPlayer:JSON.parse(localStorage.getItem('countPlayer') || 1),
     }
   },
   methods: {
     onSubmit(event) {
       event.preventDefault()
-      this.players.push({
-        id:    this.players.length,
-        firstname: this.form.firstname,
-        lastname: this.form.lastname,
-        killscore: this.form.killscore,
-        kindnessScore: this.form.associal,
-        magic: this.form.magic,
-        iq: this.form.iq,
-        strength: this.form.strength
-      });
+      this.countPlayer = this.countPlayer+2;
+
       let newPlayer = {
-        id:    this.players.length,
+        id:    this.countPlayer,
         firstname: this.form.firstname,
         lastname: this.form.lastname,
         winnings: 0,
@@ -152,6 +146,8 @@ export default {
         iq: this.form.iq,
         strength: this.form.strength
       }
+      this.players.push(newPlayer);
+      localStorage.setItem('countPlayer',JSON.stringify(this.countPlayer));
       alert(JSON.stringify(this.players))
       localStorage.setItem('players', JSON.stringify(this.players))
 
@@ -177,16 +173,18 @@ export default {
 
     },
     onPlay(event,playerId){
+      event.preventDefault;
       if(!this.isPlayerOneSet){
 
         console.log(playerId);      
-        this.playerOne = this.players[playerId];
+        this.playerOne = this.players.find(player=> player.id===playerId);
         console.log(this.playerOne);
         this.isPlayerOneSet = true;
     }
-    else if (!this.isPlayerTwoSet& this.playerOne.id!=playerId){
+    else if (!this.isPlayerTwoSet){
         console.log(playerId);      
-        this.playerTwo = this.players[playerId];
+        this.playerTwo = this.players.find(player=> player.id===playerId);
+        console.dir(this.players)
         console.log(this.playerTwo);
         this.isPlayerTwoSet = true;
       }
@@ -206,18 +204,22 @@ export default {
       strikeCount+= this.playerOne.strength>this.playerTwo.strength;
       console.log(strikeCount)
       if(strikeCount>2){
-          console.log(this.playerOne.firstname+" "+this.playerOne.lastname+" is the winner ");
-          this.playerOne.winnings+=1;
-      }else{
+        console.log(this.playerOne.firstname+" "+this.playerOne.lastname+" is the winner ");
+      this.playerOne.winnings+=1;
+          }
+      else{
         console.log(this.playerTwo.firstname+" "+this.playerTwo.lastname+" is the winner ");
+      this.playerTwo.winnings+=1;
       }
     },
+    
     resetfighter(event){
       event.preventDefault();
       this.playerOne = null;
       this.playerTwo = null;
       this.isPlayerOneSet = false;
-      this.isPlayerTwoSet = false;  
+      this.isPlayerTwoSet = false; 
+      console.log(this.playerOne+"\n"+this.playerTwo); 
     }
   }
 }
