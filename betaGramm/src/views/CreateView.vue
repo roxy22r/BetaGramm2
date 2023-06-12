@@ -251,7 +251,6 @@ export default {
       this.form.iq = ''
       this.form.strength = ''
     },
-    // eslint-disable-next-line no-unused-vars
     deltePlayer(event, playerId) {
       event.preventDefault
       service.deletePlayer(playerId)
@@ -271,7 +270,6 @@ export default {
     },
     fight(event) {
       event.preventDefault()
-      // eslint-disable-next-line no-unused-vars
       let strikeCount = 0
       strikeCount += this.playerOne.killscore > this.playerTwo.strength
       strikeCount += this.playerOne.associal > this.playerTwo.associal

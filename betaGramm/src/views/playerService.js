@@ -4,13 +4,14 @@ export default class PlayerService {
       }
      getAllPlayers() {
         console.log(this.players);
-        return   this.players=JSON.parse(localStorage.getItem('players') || '[]');
+        this.players=JSON.parse(localStorage.getItem('players') || '[]');
+        return   this.players;
     }
     addPlayer(player){
         player.id = this.players.length+2;
         console.log(player);
         this.players.push(player);
-        localStorage.setItem('players',JSON.stringify(this.players)) ;
+        this.setPlayersInLocalStorage();
 
     }
 
@@ -22,10 +23,14 @@ export default class PlayerService {
     deletePlayer(playerId){
         let player =this.getPlayer(playerId);
         this.players.splice(player, 1);
-        localStorage.setItem('players',JSON.stringify(this.players)) ;
+        this.setPlayersInLocalStorage();
     }
     winningsPlusOne(playerId){
         this.getPlayer(playerId).winnings+=1;
+
+    }
+    setPlayersInLocalStorage(){
+        localStorage.setItem('players',JSON.stringify(this.players)) ;
 
     }
 }

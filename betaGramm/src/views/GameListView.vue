@@ -1,4 +1,3 @@
-<!-- eslint-disable no-undef -->
 <template>
   <div class="gamelist"></div>
   <div class="content">
@@ -21,29 +20,27 @@
 <script>
 import { computed } from '@vue/reactivity'
 import { isGloballyWhitelisted } from '@vue/shared'
+import GameService from './gameService'
 
+let service = new GameService()
 export default {
   data() {
     return {
       form: {
         title: ''
       },
-      games: JSON.parse(localStorage.getItem('games') || '[]'),
-      count: 0
+      games: service.getAllGames()
     }
   },
   methods: {
     onSubmit(event) {
       event.preventDefault()
-      this.count = this.games.length + 1
       let newGame = {
-        id: this.count,
+        id: null,
         title: this.form.title,
         isDone: false
       }
-      console.log(newGame)
-      this.games.push(newGame)
-      localStorage.setItem('games', JSON.stringify(newGame))
+      service.addGame(newGame)
     },
     onReset(event) {
       event.preventDefault()
@@ -52,8 +49,7 @@ export default {
     },
     onDelete(event, gamesId) {
       event.preventDefault
-      this.games.splice(gamesId, 1)
-      localStorage.setItem('games', JSON.stringify(this.games))
+      service.deleteGame(gamesId)
     }
   }
 }
