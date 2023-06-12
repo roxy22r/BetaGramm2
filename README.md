@@ -1,5 +1,5 @@
 # BetaGramm2
-This is a instagram like website for a Project
+This is a Website vor Gamers who want to Battle against each other and want to add Games they want to buy to a list.
 
 ## Lessons-Learned
 - Racism Bad
