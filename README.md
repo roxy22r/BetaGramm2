@@ -2,6 +2,11 @@
 This is a instagram like website for a Project
 
 ## Lessons-Learned
+
+### What is Vue?
+Vue is a client sided Java-Script Webframework for the creation of Single-Page-Webapplications for the MVVM-Pattern.
+It can be used for some Multipage-Websites though.
+Version 2.0 Supports Serversided rendering.
 ### Bootstrap-Vue
 We have learned that with Vue 3 or generally with
 it was very difficult to use the node package bootstraap-vue.
