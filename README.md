@@ -22,7 +22,7 @@ The solution was quite simple and easy in retrospect, but the problem was that i
 ## Usecase Diagramm
 ![image](https://github.com/roxy22r/BetaGramm2/assets/51272296/f71dbc3a-dfed-44fb-be32-ec6c2d4c104e)
 
-### Important Info
+### Important Commands
 ## Project Setup
 
 ```sh
