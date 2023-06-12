@@ -4,6 +4,7 @@ This is a instagram like website for a Project
 ## Lessons-Learned
 - Racism Bad
 - MEGELTOME EH 
+- Andrew Tate is the one and only TOP G!
 ### What is Vue?
 Vue is a client sided Java-Script Webframework for the creation of Single-Page-Webapplications for the MVVM-Pattern.
 It can be used for some Multipage-Websites though.
