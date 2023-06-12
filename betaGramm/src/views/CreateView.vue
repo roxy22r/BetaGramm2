@@ -180,7 +180,7 @@
 <!-- eslint-disable no-undef -->
 
 <script>
-import PlayerService from './playerService.js'
+import PlayerService from '../service/playerService.js'
 let service = new PlayerService()
 const playerDefault = {
   id: 0,

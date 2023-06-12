@@ -20,7 +20,7 @@
 <script>
 import { computed } from '@vue/reactivity'
 import { isGloballyWhitelisted } from '@vue/shared'
-import GameService from './gameService'
+import GameService from '../service/gameService.js'
 
 let service = new GameService()
 export default {
