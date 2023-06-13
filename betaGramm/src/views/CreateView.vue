@@ -3,9 +3,9 @@
 <template>
   <div class="beta">
     <div>
-   
-        <div class="mb-3">
-        
+
+      <div class="mb-3">
+
 
         <form @submit="onSubmit" @reset="onReset">
           <li>
@@ -48,136 +48,111 @@
         </form>
       </div>
 
-        <div class="fightersContainerWithTitle">
-          <h1>{{ winnerText }}</h1>
+      <div class="fightersContainerWithTitle">
+        <h1>{{ winnerText }}</h1>
 
-          <div class="fightersContainer">
-            <div class="card" id="fighterOne">
-              <li class="cardHead">
-                <h4>
-                  {{ playerOne.firstname + ' ' + playerOne.lastname }}
-                </h4>
-              </li>
-              <div class="cardImg">
-                <li><img alt="img" src="..\assets\face.png" /></li>
-              </div>
-              <div class="cardInfo">
+        <div class="fightersContainer">
+          <div class="card" id="fighterOne">
+            <li class="cardHead">
+              <h4>
+                {{ playerOne.firstname + ' ' + playerOne.lastname }}
+              </h4>
+            </li>
+            <div class="cardImg">
+              <li><img alt="img" src="..\assets\face.png" /></li>
+            </div>
+            <div class="cardInfo">
 
-                <li>IQ: {{ playerOne.iq }}</li>
-                <li>Strength: {{ playerOne.strength }}</li>
-                <li>Magic: {{ playerOne.magic }}</li>
-                <li>Associal: {{ playerOne.associal }}</li>
-                <li>Kindness: {{ playerOne.kindnessScore }}</li>
-                <li>Winnings: {{ playerOne.winnings }}</li>
+              <li>IQ: {{ playerOne.iq }}</li>
+              <li>Strength: {{ playerOne.strength }}</li>
+              <li>Magic: {{ playerOne.magic }}</li>
+              <li>Associal: {{ playerOne.associal }}</li>
+              <li>Kindness: {{ playerOne.kindnessScore }}</li>
+              <li>Winnings: {{ playerOne.winnings }}</li>
 
-                <button
-                  type="button"
-                  class="btn btn-dark BG_btn"
-                  v-on:click="deltePlayer($event, playerOne.id)"
-                >
-                  Delete
+              <button type="button" class="btn btn-dark BG_btn" v-on:click="deltePlayer($event, playerOne.id)">
+                Delete
+              </button>
+              <button type="button" class="btn btn-dark BG_btn">Edit</button>
+              <li>
+                <button type="button" class="btn btn-dark BG_btn" v-on:click="onPlay($event, playerOne.id)">
+                  Play
                 </button>
-                <button type="button" class="btn btn-dark BG_btn">Edit</button>
-                <li>
-                  <button
-                    type="button"
-                    class="btn btn-dark BG_btn"
-                    v-on:click="onPlay($event, playerOne.id)"
-                  >
-                    Play
-                  </button>
-                </li>
-              </div>
-            </div>
-            <div class="fightOptionBtn">
-              <button class="btn btn-dark BG_btn" @click="fight">FIGHT</button>
-              <button class="btn btn-dark BG_btn" @click="resetfighter">clear Fighters</button>
-            </div>
-
-            <div class="card" id="fighterTwo">
-              <li class="cardHead">
-                <h4>
-                  {{ playerTwo.firstname + ' ' + playerTwo.lastname }}
-                </h4>
               </li>
-              <div class="cardImg">
-                <li><img alt="img" src="..\assets\face.png" /></li>
-              </div>
-              <div class="cardInfo">
+            </div>
+          </div>
+          <div class="fightOptionBtn">
+            <button class="btn btn-dark BG_btn" @click="fight">FIGHT</button>
+            <button class="btn btn-dark BG_btn" @click="resetfighter">clear Fighters</button>
+          </div>
 
-                <li>IQ: {{ playerTwo.iq }}</li>
-                <li>Strength: {{ playerTwo.strength }}</li>
-                <li>Magic: {{ playerTwo.magic }}</li>
-                <li>Associal: {{ playerTwo.associal }}</li>
-                <li>Kindness: {{ playerTwo.kindnessScore }}</li>
-                <li>Winnings: {{ playerTwo.winnings }}</li>
+          <div class="card" id="fighterTwo">
+            <li class="cardHead">
+              <h4>
+                {{ playerTwo.firstname + ' ' + playerTwo.lastname }}
+              </h4>
+            </li>
+            <div class="cardImg">
+              <li><img alt="img" src="..\assets\face.png" /></li>
+            </div>
+            <div class="cardInfo">
 
-                <button
-                  type="button"
-                  class="btn btn-dark BG_btn"
-                  v-on:click="deltePlayer($event, player.id)"
-                >
-                  Delete
+              <li>IQ: {{ playerTwo.iq }}</li>
+              <li>Strength: {{ playerTwo.strength }}</li>
+              <li>Magic: {{ playerTwo.magic }}</li>
+              <li>Associal: {{ playerTwo.associal }}</li>
+              <li>Kindness: {{ playerTwo.kindnessScore }}</li>
+              <li>Winnings: {{ playerTwo.winnings }}</li>
+
+              <button type="button" class="btn btn-dark BG_btn" v-on:click="deltePlayer($event, player.id)">
+                Delete
+              </button>
+              <button type="button" class="btn btn-dark BG_btn">Edit</button>
+              <li>
+                <button type="button" class="btn btn-dark BG_btn" v-on:click="onPlay($event, player.id)">
+                  Play
                 </button>
-                <button type="button" class="btn btn-dark BG_btn">Edit</button>
-                <li>
-                  <button
-                    type="button"
-                    class="btn btn-dark BG_btn"
-                    v-on:click="onPlay($event, player.id)"
-                  >
-                    Play
-                  </button>
-                </li>
-              </div>
-            </div>
-        </div>
-            </div>
-
-        <div class="showAllPlayer">
-          <ul style="color: white; list-style: none" v-for="player in players">
-            <div class="card">
-              <li class="cardHead">
-                <h4>
-                  {{ player.firstname + ' ' + player.lastname }}
-                </h4>
               </li>
-              <div class="cardImg">
-                <li><img alt="img" src="..\assets\face.png" /></li>
-              </div>
-              <div class="cardInfo">
-                <li>ID: {{ player.id }}</li>
-
-                <li>IQ: {{ player.iq }}</li>
-                <li>Strength: {{ player.strength }}</li>
-                <li>Magic: {{ player.magic }}</li>
-                <li>Associal: {{ player.associal }}</li>
-                <li>Kindness: {{ player.kindnessScore }}</li>
-                <li>Winnings: {{ player.winnings }}</li>
-
-                <button
-                  type="button"
-                  class="btn btn-dark BG_btn"
-                  v-on:click="deltePlayer($event, player.id)"
-                >
-                  Delete
-                </button>
-                <button type="button" class="btn btn-dark BG_btn">Edit</button>
-                <li>
-                  <button
-                    type="button"
-                    class="btn btn-dark BG_btn"
-                    v-on:click="onPlay($event, player.id)"
-                  >
-                    Play
-                  </button>
-                </li>
-              </div>
             </div>
-          </ul>
+          </div>
         </div>
       </div>
+
+      <div class="showAllPlayer">
+        <ul style="color: white; list-style: none" v-for="player in players">
+          <div class="card">
+            <li class="cardHead">
+              <h4>
+                {{ player.firstname + ' ' + player.lastname }}
+              </h4>
+            </li>
+            <div class="cardImg">
+              <li><img alt="img" src="..\assets\face.png" /></li>
+            </div>
+            <div class="cardInfo">
+
+              <li>IQ: {{ player.iq }}</li>
+              <li>Strength: {{ player.strength }}</li>
+              <li>Magic: {{ player.magic }}</li>
+              <li>Associal: {{ player.associal }}</li>
+              <li>Kindness: {{ player.kindnessScore }}</li>
+              <li>Winnings: {{ player.winnings }}</li>
+
+              <button type="button" class="btn btn-dark BG_btn" v-on:click="deltePlayer($event, player.id)">
+                Delete
+              </button>
+              <button type="button" class="btn btn-dark BG_btn">Edit</button>
+              <li>
+                <button type="button" class="btn btn-dark BG_btn" v-on:click="onPlay($event, player.id)">
+                  Play
+                </button>
+              </li>
+            </div>
+          </div>
+        </ul>
+      </div>
     </div>
+  </div>
 </template>
 <!-- eslint-disable no-undef -->
 
@@ -308,6 +283,7 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 .fightersContainer {
   order: 1;
   width: 100%;
@@ -317,6 +293,7 @@ export default {
   padding-bottom: 100px;
   flex-wrap: nowrap;
 }
+
 .fightOptionBtn {
   margin-top: 25%;
   height: fit-content;
@@ -324,6 +301,7 @@ export default {
   text-align: center;
   padding-bottom: 80px;
 }
+
 body {
   background-color: black;
 }
@@ -343,6 +321,7 @@ body {
   gap: 20px;
   flex-direction: row;
 }
+
 .fightersContainerWithTitle {
   order: 1;
 }
@@ -355,7 +334,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 350px;
-  height: 550px;
+  height: 100%;
   padding: 20px;
 
   margin-left: 30px;
