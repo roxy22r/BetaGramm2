@@ -397,7 +397,6 @@ body {
 }
 
 form {
-  margin-top: 50%;
   order: 1;
   width: 100%;
   display: inline-block;
