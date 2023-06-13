@@ -34,8 +34,8 @@ We had a problem with the responsiveness and placement of the navigation, becaus
 ## Usecase Diagramm
 ![image](https://github.com/roxy22r/BetaGramm2/assets/51272296/f71dbc3a-dfed-44fb-be32-ec6c2d4c104e)
 
-## Style Guide 
-### Frontend
+##  Guide 
+### Style Guide 
 Logo: We have no Logo but as a Place holder we will use the vue Logo
 
 Fonts:
@@ -65,14 +65,14 @@ Copy:
 Example:
 - Heading: Welcome to our Retro Gaming Shop
 
-### Backend
+### Code Guide
 Code Guide Lines:
 
 - Please use ESLint for code formatting
 - Try to use bootstrap a much as possible except
 - Use axios when rest calls are implemented
 
-- Programming style flow the book Clean Code  
+Programming style flow the book Clean Code  
 
 ### Important Commands
 ## Project Setup
