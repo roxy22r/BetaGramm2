@@ -72,8 +72,9 @@ Code Guide Lines:
 - Try to use bootstrap a much as possible except
 - Use axios when rest calls are implemented
 
-Programming style flow the book Clean Code  
-##Wireframes
+Programming style flow the book Clean Code
+
+# #Wireframes
 Gemneral when is only text then it is centred About Us Pages
 ![image](https://github.com/roxy22r/BetaGramm2/assets/51272296/272b8893-d814-43c4-a074-fe862cc643f6)
 General Forms are in the center in Login, Register
