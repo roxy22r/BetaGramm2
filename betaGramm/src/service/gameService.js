@@ -16,6 +16,7 @@ export default class GameService {
    }
 
    getGame(gameId){
+        console.log(gameId);
        return this.games.find((game) => game.id === gameId);
    }
 
@@ -25,6 +26,17 @@ export default class GameService {
        this.setGamesInLocalStorage();
 
    }
+   // eslint-disable-next-line no-unused-vars
+   editGame(editGame){
+        // eslint-disable-next-line no-unused-vars
+      let game = {
+            id:editGame.id,
+            title:editGame.title,
+            isDone: editGame.isDone
+        }
+        this.deleteGame(game.id);
+        this.addGame(game);
+    }
  
    setGamesInLocalStorage(){
     localStorage.setItem('games',JSON.stringify(this.games)) ;

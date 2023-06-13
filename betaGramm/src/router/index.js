@@ -35,6 +35,16 @@ const router = createRouter({
 
     },
     {
+      path: '/editGame/:id/:title/:isDone',
+      name: 'editGame',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/EditGameView.vue'),
+
+    }
+    ,
+    {
       path: '/gamelist',
       name: 'gamelist',
       // route level code-splitting

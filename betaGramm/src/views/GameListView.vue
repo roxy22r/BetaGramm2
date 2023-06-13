@@ -7,23 +7,27 @@
       <button class="btn btn-dark" type="submit">Add</button>
     </form>
     <ul style="color: white; list-style: none" v-for="game in games">
-      {{
-        game.title
-      }}
-      <input type="checkbox" :checked="game.isDone" />
+      <div :class="game.isDone?'OK':'NOK'">
 
-      <button class="btn btn-dark" @click="edit">Edit</button>
-      <button class="btn btn-dark" @click="onDelete">Delete</button>
+        {{game.title}}
+        <input type="checkbox" :checked="game.isDone" @click="toggleIsDone($event, game.id)" />
+      </div>
+
+      <button class="btn btn-dark" @click="onEdit($event, game.id)">Edit</button>
+      <button class="btn btn-dark" @click="onDelete($event, game.id)">Delete</button>
     </ul>
   </div>
 </template>
 <script>
 import { computed } from '@vue/reactivity'
 import { isGloballyWhitelisted } from '@vue/shared'
+import router from '@/router'
 import GameService from '../service/gameService.js'
 
 let service = new GameService()
 export default {
+
+  name:'GameListView',
   data() {
     return {
       form: {
@@ -32,6 +36,7 @@ export default {
       games: service.getAllGames()
     }
   },
+  editingGame: {},
   methods: {
     onSubmit(event) {
       event.preventDefault()
@@ -47,9 +52,24 @@ export default {
       // Reset our form values
       this.form.title = ''
     },
+    onEdit(event,gamesId){
+      event.preventDefault;
+      console.log(gamesId);
+      let game =service.getGame(gamesId);
+      this.$router.push({ name: 'editGame',params:{id:game.id,title:game.title,isDone:game.isDone} })
+
+    },
     onDelete(event, gamesId) {
-      event.preventDefault
+      event.preventDefault;
       service.deleteGame(gamesId)
+      
+      this.games=service.getAllGames();
+    },
+    toggleIsDone(event, gamesId){
+      event.preventDefault;
+      let game = service.getGame(gamesId)
+      game.isDone=!service.getGame(gamesId).isDone;
+      service.editGame(game);
     }
   }
 }
@@ -82,5 +102,12 @@ button {
   width: fit-content;
   border-color: none;
   background-color: black;
+}
+
+.OK{
+background-color: red;
+}
+.NOK{
+background-color: green;
 }
 </style>
