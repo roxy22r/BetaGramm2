@@ -87,6 +87,21 @@ Who is better Page (naming is not the real name of the page)
 
 
 ### Important Commands
+
+## Testing 
+We mostly tested the website manuelly and used a vue plugin to make the programming and testing process easyier.
+#Frame Work Jest
+We would've liked to test with Jest but because of the time we did 't do any :( .
+Jest is a popular and widely-used testing framework for Vue.js applications. It is highly regarded for its ease of use and configurability, making it a great choice for developers who want to write efficient and effective tests for their Vue.js apps. 
+
+Jest provides a lot of out-of-the-box features such as mocking, snapshot testing, code coverage, and more. It automates the process of setting up, running, and reporting on tests, making it easier for developers to focus on writing quality code.
+
+In Vue.js, Jest can be used to test components, Vuex stores, and other parts of your application. It provides a streamlined API for interacting with your Vue.js components and enforcing custom assertions.
+
+Overall, Jest is an excellent choice for testing Vue.js applications thanks to its ease of use, powerful features, and extensive community support.
+
+#Info 
+We 
 ## Project Setup
 
 ```sh
