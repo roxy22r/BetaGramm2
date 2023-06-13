@@ -73,6 +73,17 @@ Code Guide Lines:
 - Use axios when rest calls are implemented
 
 Programming style flow the book Clean Code  
+##Wireframes
+Gemneral when is only text then it is centred About Us Pages
+![image](https://github.com/roxy22r/BetaGramm2/assets/51272296/272b8893-d814-43c4-a074-fe862cc643f6)
+General Forms are in the center in Login, Register
+![image](https://github.com/roxy22r/BetaGramm2/assets/51272296/1b073244-9667-4196-b0cf-e27b47090f9f)
+Games To Buy Wireframes
+![image](https://github.com/roxy22r/BetaGramm2/assets/51272296/4d4c64b4-078a-4bcd-93cb-80f70c4148e7)
+Who is better Page (naming is not the real name of the page)
+![image](https://github.com/roxy22r/BetaGramm2/assets/51272296/23d312fc-c888-41a8-9614-7c0e171313e5)
+
+
 
 ### Important Commands
 ## Project Setup
