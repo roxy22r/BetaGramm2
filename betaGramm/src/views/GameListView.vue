@@ -73,7 +73,7 @@ body {
 
 @media (min-width: 1024px) {
   .gamelist {
-    min-height: 100vh;
+    min-height: 10vh;
     display: flex;
     align-items: center;
   }
