@@ -100,8 +100,7 @@ In Vue.js, Jest can be used to test components, Vuex stores, and other parts of 
 
 Overall, Jest is an excellent choice for testing Vue.js applications thanks to its ease of use, powerful features, and extensive community support.
 
-#Info 
-We 
+
 ## Project Setup
 
 ```sh
