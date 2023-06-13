@@ -3,7 +3,10 @@
 <template>
   <div class="beta">
     <div>
-      <div class="content">
+   
+        <div class="mb-3">
+        
+
         <form @submit="onSubmit" @reset="onReset">
           <li>
             <h1 class="centerTitle">Create new Player</h1>
@@ -43,6 +46,8 @@
           </li>
           <button type="submit" class="btn btn-dark BG_btn">Submit</button>
         </form>
+      </div>
+
         <div class="fightersContainerWithTitle">
           <h1>{{ winnerText }}</h1>
 
@@ -57,7 +62,6 @@
                 <li><img alt="img" src="..\assets\face.png" /></li>
               </div>
               <div class="cardInfo">
-                <li>ID: {{ playerOne.id }}</li>
 
                 <li>IQ: {{ playerOne.iq }}</li>
                 <li>Strength: {{ playerOne.strength }}</li>
@@ -100,7 +104,6 @@
                 <li><img alt="img" src="..\assets\face.png" /></li>
               </div>
               <div class="cardInfo">
-                <li>ID: {{ playerTwo.id }}</li>
 
                 <li>IQ: {{ playerTwo.iq }}</li>
                 <li>Strength: {{ playerTwo.strength }}</li>
@@ -128,8 +131,8 @@
                 </li>
               </div>
             </div>
-          </div>
         </div>
+            </div>
 
         <div class="showAllPlayer">
           <ul style="color: white; list-style: none" v-for="player in players">
@@ -175,7 +178,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 <!-- eslint-disable no-undef -->
 
