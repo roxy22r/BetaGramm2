@@ -2,9 +2,6 @@
 This is a Website vor Gamers who want to Battle against each other and want to add Games they want to buy to a list.
 
 ## Lessons-Learned
-- Racism Bad
-- MEGELTOME EH 
-- Andrew Tate is the one and only TOP G!
 ### What is Vue?
 Vue is a client sided Java-Script Webframework for the creation of Single-Page-Webapplications for the MVVM-Pattern.
 It can be used for some Multipage-Websites though.
@@ -19,8 +16,63 @@ Well we should've done tinyer steps
 ### Creating a form
 We stuggled to send the form data to the logic part from Vue.
 The solution was quite simple and easy in retrospect, but the problem was that it was very unusual for us that the logic was also in the same file. Conclusion don't be afraid of new things even if they are not your personal preference.
+### Send data via Routing
+We wanted to upload the game data to another site. Since we need this data in the form, our goal was to edit the data but not on the same page.
+
+In the end we learned that with 
+this.$route.params(name: "viewName",parmas:{ id: '1'})
+you can send the data via route and with
+read this.$route.params.title.
+
+How ever, we did not manage to give a json object with it.
+## Other Problems
+
+### Fronted Navigation
+We had a problem with the responsiveness and placement of the navigation, because something from Vue itself probably overwrote our code. Unfortunately we don't have a fix for this :(
+
+
 ## Usecase Diagramm
 ![image](https://github.com/roxy22r/BetaGramm2/assets/51272296/f71dbc3a-dfed-44fb-be32-ec6c2d4c104e)
+
+## Style Guide 
+### Frontend
+Logo: We have no Logo but as a Place holder we will use the vue Logo
+
+Fonts:
+
+- Headings and titles font: 'Press Start 2P',curisive ->Import for the Font-family: @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+- Body text font: Arial, sans-serif
+
+Style Guide:
+
+Colors
+Navigation Color: #5F9EA0
+Background Color: #1D1D35
+Primary color : #00000,
+Secondary Blue: #1D1D35
+
+
+Images:
+- Use medium-quality or that seems clear what is on the  images that reinforce the message of the website.
+- Use images that are relevant to the content.
+
+Copy:
+- Keep copy concise and to-the-point.
+- Use language that is easy to understand and free of jargon.
+- Use headers and subheads to break up content and make it easier to read.
+
+- General style is in a Retro Game Style
+Example:
+- Heading: Welcome to our Retro Gaming Shop
+
+### Backend
+Code Guide Lines:
+
+- Please use ESLint for code formatting
+- Try to use bootstrap a much as possible except
+- Use axios when rest calls are implemented
+
+- Programming style flow the book Clean Code  
 
 ### Important Commands
 ## Project Setup

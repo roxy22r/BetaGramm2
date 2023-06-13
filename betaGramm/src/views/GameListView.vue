@@ -138,7 +138,6 @@ export default {
 <style>
 body {
   color: white;
-  background-color: black;
 }
 
 .content {

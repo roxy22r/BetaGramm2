@@ -12,7 +12,6 @@ import TheWelcome from '../components/TheWelcome.vue'
 </template>
 <style>
 body{
-  background-color: black;
   color: aliceblue;
 }
 .wellcome{

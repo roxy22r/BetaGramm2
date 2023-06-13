@@ -302,9 +302,7 @@ export default {
   padding-bottom: 80px;
 }
 
-body {
-  background-color: black;
-}
+
 
 .centerTitle {
   display: flex;
@@ -338,8 +336,8 @@ body {
   padding: 20px;
 
   margin-left: 30px;
-  border-color: aqua;
-  background-color: black;
+  border-color: var(background-color);
+  background-color: #374B43;
   color: white;
   list-style: none;
 }
@@ -371,10 +369,10 @@ body {
 
 #fighterOne,
 #fighterTwo {
-  border-color: royalblue;
+  border-color: #374B43;
   border-width: 3px;
 
-  background-color: rgb(82, 57, 19);
+  background-color: #B68611
 }
 
 form {

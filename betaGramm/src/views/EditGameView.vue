@@ -70,7 +70,6 @@ methods: {
 
 
 body{
-  background-color: black;
   color: aliceblue;
 }
 .wellcome{

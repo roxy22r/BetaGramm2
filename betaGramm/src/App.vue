@@ -49,7 +49,7 @@ import { RouterLink, RouterView } from 'vue-router'
 <style scoped>
    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 body{
-  background-color: black;
+  background-color: var(--background-color);
 
 }
 header{
@@ -97,8 +97,8 @@ nav li a {
 
 nav li.active,
 nav li:hover {
-  background: turquoise;
-  color: #fff;
+  background:  var(--background-hover-green);
+  color:#374B43 ;
   animation: navSizeOnHover;
   animation-duration: 0.2s;
   animation-delay: 0.5s;

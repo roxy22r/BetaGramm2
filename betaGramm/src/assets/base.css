@@ -2,25 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
-
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
-
-  --vt-c-indigo: #2c3e50;
-
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  --background-color: #1D1D35;
+  --background-hover-green:#D4E4D4;
 }
 
 /* semantic color variables for this project */
@@ -61,6 +44,8 @@
 }
 
 body {
+  background-color:   var(--background-color) !important;
+
   display: flex;
   justify-content: center;
   text-align: center;
@@ -84,8 +69,8 @@ order: 1;
 .BG_btn{
   margin-top: 20px;
   font-weight: bold;
-  border-color: greenyellow !important;
-  background-color: black !important;
+  border-color: #5E7C60 !important;
+  background-color:   var(--background-color) !important;
   color: white;
   margin-right: 20px;
   margin: 10px !important;
