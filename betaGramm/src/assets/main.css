@@ -24,6 +24,8 @@ a,
   body {
     display: flex;
    justify-content: flex-start;
+   font-family:'Press Start 2P', cursive !important;
+
   }
 
   #app {

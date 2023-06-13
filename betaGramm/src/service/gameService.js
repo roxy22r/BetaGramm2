@@ -1,3 +1,5 @@
+import { uuid } from 'vue-uuid'; 
+
 export default class GameService {
     games = JSON.parse(localStorage.getItem('games') || '[]');
        sendRequest() {
@@ -8,8 +10,7 @@ export default class GameService {
        return   this.games;
    }
    addGame(game){
-    console.log(game);
-       game.id = this.games.length+2;
+       game.id = uuid.v1();
        this.games.push(game);
        this.setGamesInLocalStorage();
 
@@ -28,7 +29,6 @@ export default class GameService {
    }
    // eslint-disable-next-line no-unused-vars
    editGame(editGame){
-        // eslint-disable-next-line no-unused-vars
       let game = {
             id:editGame.id,
             title:editGame.title,

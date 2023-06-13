@@ -6,7 +6,7 @@
   <label>Title: </label>
   <input v-model="title" type="text" color="white" />
   <label>isDone</label>
-  <input  type="checkbox" color="white"  v-model="isDone" :checked="isDone" />
+  <input  type="checkbox" color="white"  v-model="isDone"  />
   <button class="btn btn-dark" type="submit">Update</button>
 
 </form>

@@ -1,3 +1,5 @@
+import { uuid } from 'vue-uuid'; 
+
 export default class PlayerService {
      players = JSON.parse(localStorage.getItem('players') || '[]');
         sendRequest() {
@@ -8,7 +10,7 @@ export default class PlayerService {
         return   this.players;
     }
     addPlayer(player){
-        player.id = this.players.length+2;
+        player.id = uuid.v1();
         console.log(player);
         this.players.push(player);
         this.setPlayersInLocalStorage();

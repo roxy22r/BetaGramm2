@@ -47,9 +47,10 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
-
+   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 body{
   background-color: black;
+
 }
 header{
   display: flex;
@@ -85,6 +86,8 @@ nav li {
 }
 
 nav li a {
+  font-family:'Press Start 2P', cursive !important;
+
   display: block; /* block or inline-block is needed */
   text-decoration: none;
   font: 30px/1 sans-serif;
