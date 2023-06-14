@@ -146,3 +146,10 @@ npm run test:e2e
 ```sh
 npm run lint
 ```
+
+### Fehler vom Programm
+
+- Die Battlefunktion ist teilweise etwas random mit dem Berechnen.
+- Die Gamelist hat Fehler beim eintragen das man Dinge manchmal nicht korrekt eintragen kann.
+- Das Design ist etwas unschön.
+- Das Editieren und Löschen ist etwas verbuggt.
