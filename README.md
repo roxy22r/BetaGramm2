@@ -63,7 +63,7 @@ Copy:
 
 - General style is in a Retro Game Style
 Example:
-- Heading: Welcome to our Retro Gaming Shop
+- Heading: Welcome to our Retro Gaming Info Site
 
 ### Code Guide
 Code Guide Lines:
