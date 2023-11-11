@@ -5,7 +5,7 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <header>
 
-    <div class="wrapper">
+    <div v-if="!isMobile()" class="wrapper">
       
 
         <nav>
@@ -38,9 +38,13 @@ import { RouterLink, RouterView } from 'vue-router'
 
       </nav>
     </div>
-  <div>
     
-  </div>
+  <div v-else>
+        	<sidebar>
+              create side navbar for mobile version
+
+          </sidebar>
+      </div>
 </header>
 <div class="content">
   <router-view />
@@ -49,10 +53,21 @@ import { RouterLink, RouterView } from 'vue-router'
 </div>
 
 </template>
-<script>
 
+<script>
+export default {
+    isSideMenuOpen:false
+  ,
+  methods: {
+    isMobile(){
+
+      return  window.screen.width<800;
+    }
+  }
+}
 </script>
 <style scoped>
+
    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 body{
   background-color: var(--background-color);

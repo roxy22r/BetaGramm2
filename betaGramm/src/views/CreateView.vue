@@ -47,7 +47,7 @@
       <!--Beginn Of first Fighter-->
 
       <div class="fightersContainerWithTitle">
-        <h1>{{ winnerText }}</h1>
+        <h1 id="winnerText">{{ winnerText }}</h1>
 
         <div class="fightersContainer">
           <div class="card" id="fighterOne">
@@ -231,7 +231,7 @@ export default {
       service.deletePlayer(playerId)
     },
     onPlay(event, playerId) {
-      event.preventDefault
+      event.preventDefault()
       let fightingPlayer = service.getPlayer(playerId)
       if (!this.isPlayerOneSet) {
         this.playerOne = fightingPlayer
@@ -243,23 +243,34 @@ export default {
         this.winnerText = 'Please remove one of the Player or both to fight the next Player'
       }
     },
+    areFightingPlayersSet(){
+        return this.playerOne.id!=0 &&this.playerTwo.id!=0;
+    },
     fight(event) {
-      event.preventDefault()
-      let strikeCount = 0
-      strikeCount += this.playerOne.killscore > this.playerTwo.strength
-      strikeCount += this.playerOne.associal > this.playerTwo.associal
-      strikeCount += this.playerOne.magic > this.playerTwo.magic
-      strikeCount += this.playerOne.iq > this.playerTwo.iq
-      strikeCount += this.playerOne.strength > this.playerTwo.strength
-      console.log(strikeCount)
-      if (strikeCount > 2) {
-        this.winnerText =
+      console.log(this.areFightingPlayersSet())
+      console.log("p1",this.playerOne);
+      console.log("p2",this.playerTwo);
+      if(this.areFightingPlayersSet()){
+
+        event.preventDefault()
+        let strikeCount = 0
+        strikeCount += this.playerOne.killscore > this.playerTwo.strength
+        strikeCount += this.playerOne.associal > this.playerTwo.associal
+        strikeCount += this.playerOne.magic > this.playerTwo.magic
+        strikeCount += this.playerOne.iq > this.playerTwo.iq
+        strikeCount += this.playerOne.strength > this.playerTwo.strength
+        console.log(strikeCount)
+        if (strikeCount > 2) {
+          this.winnerText =
           this.playerOne.firstname + ' ' + this.playerOne.lastname + ' is the winner '
-        service.winningsPlusOne(this.playerOne.id)
-      } else {
-        this.winnerText =
+          service.winningsPlusOne(this.playerOne.id)
+        } else {
+          this.winnerText =
           this.playerTwo.firstname + ' ' + this.playerTwo.lastname + ' is the winner '
-        service.winningsPlusOne(this.playerTwo.id)
+          service.winningsPlusOne(this.playerTwo.id)
+        }
+      }else{
+        this.winnerText = "Please Set the Players"; 
       }
     },
 
@@ -277,7 +288,10 @@ export default {
 </script>
 <style>
 
-
+#winnerText{
+  justify-content: center;
+  text-align: center;
+}
 .fightersContainer {
   margin-left:20px ;
   margin-right: 20px;
