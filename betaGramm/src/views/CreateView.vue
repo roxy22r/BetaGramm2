@@ -283,7 +283,7 @@ export default {
   margin-right: 20px;
   order: 1;
   display: flex;
-  padding-bottom: 100px;
+  padding-bottom: 25px;
   justify-content: center;
 
 }
@@ -306,6 +306,7 @@ export default {
 .showAllPlayer {
   order: 1;
   width: 100%;
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -345,14 +346,14 @@ align-content: center;
 }
 
 .cardImg {
+  justify-content: center;
   width: 100%;
-  margin: 0;
 
 }
 
 .cardImg img {
   order: 1;
-  margin: 0;
+  justify-content: center;
   background-color: antiquewhite;
   width: 180px;
   height: 180px;
