@@ -1,5 +1,5 @@
 <template>
-  <div class="gamelist"></div>
+  <header></header>
   <div class="content">
     <form @submit="onSubmit" @reset="onReset">
 
@@ -138,25 +138,6 @@ export default {
 <style>
 body {
   color: white;
-}
-
-.content {
-  order: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  justify-self: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .gamelist {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
 }
 
 button {

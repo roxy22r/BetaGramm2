@@ -1,7 +1,5 @@
 <template>
 
-<div class="beta">
-</div>
 <div class="content">
 
     <RouterLink class="btn btn-dark" to="/createGamer">
@@ -31,13 +29,8 @@ background-color: black;
   text-align: center;
 }
 
-@media (min-width: 1024px) {
-.beta {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-}
-}
+
+
 button{
   width: fit-content;
   border-color: none;

@@ -42,44 +42,45 @@ import { RouterLink, RouterView } from 'vue-router'
     
   </div>
 </header>
-<RouterView />
+<div class="content">
+  <router-view />
+
+
+</div>
 
 </template>
+<script>
 
+</script>
 <style scoped>
    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 body{
   background-color: var(--background-color);
+}
+wrapper{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 
-}
-header{
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-nav{
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
-  order: 1;
-  
-}
 nav ul {
-  
-  margin-top: 20px;
   padding: 0;
   display: flex;
-
+ justify-content: center;
+ text-align: center;
+ align-self: center;
+ 
+ align-items: center;
+ align-content: center;
+ align-self: center;
   list-style: none;
 }
 nav li {
-
-  padding-top: 10%;
-  padding-left:5% ;
-  padding-right:5% ;
-
-  margin-left: 20px;
+  text-align: center;
+  padding-top: 20px;
+  padding-left:2% ;
+  padding-right:2% ;
+  margin-left: 2%;
   background-color: cadetblue;
   transition: background 0.3s, color 0.3s;
   transform: skew(20deg); /* SKEW */
@@ -90,8 +91,7 @@ nav li a {
 
   display: block; /* block or inline-block is needed */
   text-decoration: none;
-  font: 30px/1 sans-serif;
-  transform: skew(-20deg); /* UNSKEW */
+   transform: skew(-20deg); /* UNSKEW */
   color: inherit;
 }
 
@@ -106,14 +106,7 @@ nav li:hover {
 
 
 }
-@keyframes navSizeOnHover {
-  0% {padding-left: 20px ; padding-right: 20px;}
-  25% {padding-left: 40px ; padding-right: 40px;}
-  50% {padding-left: 60px ; padding-right: 60px;}
-  75% {padding-left: 80px ; padding-right: 80px;}
-  100% {padding-left: 100px ;padding-right: 100px;}
 
-}
 .logo{
   background-color: transparent;
 }
@@ -121,12 +114,11 @@ nav li:hover {
   background-color: transparent;
 }
 .logo img{
-  margin-right: 100px;
+  margin-right: 10px;
   background-color: transparent;
   display: block; /* block or inline-block is needed */
   text-decoration: none;
   padding: 5px 10px;
-  font: 30px/1 sans-serif;
   transform: skew(-20deg); /* UNSKEW */
   color: inherit;
 }

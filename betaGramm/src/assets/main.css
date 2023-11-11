@@ -1,9 +1,6 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
-  padding: 2rem;
-
   font-weight: normal;
 }
 
@@ -20,20 +17,9 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
   body {
-    display: flex;
-   justify-content: flex-start;
    font-family:'Press Start 2P', cursive !important;
-
   }
 
-  #app {
-    display: flex;
-   justify-content: flex-start;
-  }
-  header {
-    display: flex;
-   justify-content: flex-start;
-  }
-}
+ 
+

@@ -39,39 +39,26 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
   font-weight: normal;
 }
 
 body {
   background-color:   var(--background-color) !important;
 
-  display: flex;
-  justify-content: center;
-  text-align: center;
+  
   color: var(--color-text);
   background: var(--color-background);
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family:'Press Start 2P', cursive !important;
-  font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-header{
-  justify-content: center;
-order: 1;
-}
-.content{
-  order: 1;
-}
+
 .BG_btn{
-  margin-top: 20px;
   font-weight: bold;
   border-color: #5E7C60 !important;
   background-color:   var(--background-color) !important;
   color: white;
-  margin-right: 20px;
-  margin: 10px !important;
 }

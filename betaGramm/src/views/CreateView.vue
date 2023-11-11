@@ -1,12 +1,9 @@
 1 |
 <!-- eslint-disable no-undef -->
 <template>
-  <div class="beta">
     <div>
 
-      <div class="mb-3">
-
-
+      <div class="mb-3 content">
         <form @submit="onSubmit" @reset="onReset">
           <li>
             <h1 class="centerTitle">Create new Player</h1>
@@ -47,6 +44,7 @@
           <button type="submit" class="btn btn-dark BG_btn">Submit</button>
         </form>
       </div>
+      <!--Beginn Of first Fighter-->
 
       <div class="fightersContainerWithTitle">
         <h1>{{ winnerText }}</h1>
@@ -81,6 +79,7 @@
               </li>
             </div>
           </div>
+          <!--End Of first Fighter-->
           <div class="fightOptionBtn">
             <button class="btn btn-dark BG_btn" @click="fight">FIGHT</button>
             <button class="btn btn-dark BG_btn" @click="resetfighter">clear Fighters</button>
@@ -151,7 +150,6 @@
           </div>
         </ul>
       </div>
-    </div>
   </div>
 </template>
 <!-- eslint-disable no-undef -->
@@ -278,20 +276,13 @@ export default {
 }
 </script>
 <style>
-.content {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
+
 
 .fightersContainer {
   order: 1;
   width: 100%;
   display: flex;
-  flex-direction: row;
-  padding: 20px;
   padding-bottom: 100px;
-  flex-wrap: nowrap;
 }
 
 .fightOptionBtn {
@@ -301,8 +292,6 @@ export default {
   text-align: center;
   padding-bottom: 80px;
 }
-
-
 
 .centerTitle {
   display: flex;
@@ -321,21 +310,20 @@ export default {
 }
 
 .fightersContainerWithTitle {
-  order: 1;
+justify-content: center;
+justify-items: center;
+align-items: center;
+align-self: center;
+align-content: center;
 }
 
-.cardHead {
-  padding-left: 20%;
-}
 
 .card {
+
   display: flex;
   flex-direction: column;
-  width: 350px;
+  width: inherit;
   height: 100%;
-  padding: 20px;
-
-  margin-left: 30px;
   border-color: var(background-color);
   background-color: #374B43;
   color: white;
@@ -350,28 +338,31 @@ export default {
 }
 
 .cardInfo li {
+  margin: 0;
   text-align: left;
 }
 
 .cardImg {
   width: 100%;
-  padding-left: 20%;
+  margin: 0;
+
 }
 
 .cardImg img {
   order: 1;
+  margin: 0;
+
   background-color: antiquewhite;
   width: 180px;
   height: 180px;
   margin-bottom: 10px;
-  justify-content: center;
+ 
 }
 
 #fighterOne,
 #fighterTwo {
   border-color: #374B43;
   border-width: 3px;
-
   background-color: #B68611
 }
 
@@ -380,33 +371,29 @@ form {
   width: 100%;
   display: inline-block;
   text-align: center;
-  margin-top: 20%;
 }
 
 form li {
   display: flex;
-  flex-wrap: wrap;
   margin-top: 10px;
-  align-items: left;
+  align-items: center;
   text-align: left;
-  justify-content: left;
+  justify-content: center;
 }
 
 form li input {
   background-color: black;
   border-color: turquoise;
   color: white;
-  display: flex;
-  flex-wrap: wrap;
   text-align: center;
   width: 300px;
   height: 30px;
   border-radius: 10px;
+  margin-left: 50px;
 }
 
 form li label {
   margin-right: 30px;
-
   width: 100px;
 }
 
@@ -414,12 +401,5 @@ form label {
   color: white;
 }
 
-@media (min-width: 1024px) {
-  .beta {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    order: 1;
-  }
-}
+
 </style>
