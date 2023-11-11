@@ -78,18 +78,10 @@ body {
 }
 
 h1 {
-    font-family: 'Press Start 2P', cursive;
     font-size: 6rem;
-    margin-top: 0;
 }
 
-p {
- 
-    font-family: 'Press Start 2P', cursive;
-    font-size: 2rem;
 
-    margin-top: 0;
-}
 .goHomeContainer{
     width: 100%;
 }
@@ -97,17 +89,13 @@ header{
     visibility: hidden;
 }
 .goHome {
-    font-family: 'Press Start 2P', cursive;
-    display: flex;
     padding: 15px;
     background-color: #3498db;
     color: #fff;
     font-size: 1.5rem;
     text-decoration: none;
-    border-radius: 5px;
     border-radius: 50px;
     margin-top: 100px;
-    justify-content: center;
     text-align: center;
     width: 500px;
     transition: background-color 0.5s ease ;
@@ -119,10 +107,10 @@ header{
 
 }
 .glitch {
-  margin-top: 10%;
-  order: 1;
-  display: flex;
+  text-align: center;
   justify-content: center;
+  align-items: center;
+  align-self: center;
   color: white;
   font-size: 48px;
   animation: glitch-effect 1s infinite;
