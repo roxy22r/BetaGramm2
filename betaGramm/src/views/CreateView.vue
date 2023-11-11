@@ -279,10 +279,13 @@ export default {
 
 
 .fightersContainer {
+  margin-left:20px ;
+  margin-right: 20px;
   order: 1;
-  width: 100%;
   display: flex;
   padding-bottom: 100px;
+  justify-content: center;
+
 }
 
 .fightOptionBtn {
@@ -331,7 +334,7 @@ align-content: center;
 
 .cardInfo {
   margin-top: 10px;
-  padding-left: 20%;
+  padding-left: 20px;
   order: 2;
   text-align: left;
 }
@@ -350,7 +353,6 @@ align-content: center;
 .cardImg img {
   order: 1;
   margin: 0;
-
   background-color: antiquewhite;
   width: 180px;
   height: 180px;
@@ -364,6 +366,7 @@ align-content: center;
   border-width: 3px;
   background-color: #B68611
 }
+/*From Style */
 
 form {
   order: 1;

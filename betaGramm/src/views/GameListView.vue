@@ -38,7 +38,7 @@
           <div class="col mx-auto">
             <!-- Todo Item 1 -->
             <div v-for="game in games">
-              <div v-if="game.title!='[]'" >
+              <div v-if="game.title!=''" >
               <div class=" row px-3 align-items-center todo-item rounded" :class="game.isDone ? 'Done' : 'NDone'">
                 <div class="col-auto m-1 p-0 d-flex align-items-center">
                   <h2 class="m-0 p-0">
@@ -107,9 +107,11 @@ export default {
         title: this.form.title,
         isDone: false
       }
-      service.addGame(newGame)
+       service.addGame(newGame)
       this.onReset();
+
       this.activate();
+
     },
     onReset(event) {
       event.preventDefault()
@@ -123,11 +125,11 @@ export default {
       this.$router.push({ name: 'editGame', params: { id: game.id, title: game.title, isDone: game.isDone } })
 
     },
-    onDelete(event, gamesId) {
+     onDelete(event, gamesId) {
       event.preventDefault;
       service.deleteGame(gamesId)
 
-      this.games = service.getAllGames();
+      this.games =  service.getAllGames();
     },
     toggleIsDone(event, gamesId) {
       event.preventDefault;
