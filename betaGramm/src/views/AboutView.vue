@@ -1,19 +1,8 @@
 <template>
 <div class="content">
- 
+  This is a Application made from R.r
+
 </div>
-  teasdfasd
-  asdfa-flip-horizontal
-  ddddddddddddd
-  ddddddd
-  teasdfasd
-  asdfa-flip-horizontal
-  ddddddddddddd
-  ddddddd
-  teasdfasd
-  asdfa-flip-horizontal
-  ddddddddddddd
-  ddddddd
 </template>
 
 

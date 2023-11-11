@@ -1,5 +1,5 @@
 <template>
-  <header></header>
+  <div class="gamelist"></div>
   <div class="content">
     <form @submit="onSubmit" @reset="onReset">
 
@@ -38,7 +38,7 @@
           <div class="col mx-auto">
             <!-- Todo Item 1 -->
             <div v-for="game in games">
-
+              <div v-if="game.title!='[]'" >
               <div class=" row px-3 align-items-center todo-item rounded" :class="game.isDone ? 'Done' : 'NDone'">
                 <div class="col-auto m-1 p-0 d-flex align-items-center">
                   <h2 class="m-0 p-0">
@@ -48,18 +48,25 @@
                       title="Mark as todo"></i>
                   </h2>
                 </div>
-                <div class="col px-1 m-1 d-flex align-items-center">
-                  <h3>{{ game.title }}</h3>
 
-                  <input type="checkbox" :checked="game.isDone" @click="toggleIsDone($event, game.id)" />
+                <div class="row  rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+                <div class="col">
 
+                  <h3>   <input class="inputBoxDone" type="checkbox" :checked="game.isDone"  @click="toggleIsDone($event, game.id)" />
+               {{ game.title }}</h3>
 
+                </div>
+                <div class="col-auto px-0 mx-0 mr-2 itemActionbtn">
                   <button class="btn btn-secondary" @click="onEdit($event, game.id)">Edit</button>
                   <button class="btn btn-danger" @click="onDelete($event, game.id)">Delete</button>
+                    
+                </div>
+              </div>
+                <div class="col px-3 m-3 d-flex align-items-center">
                 </div>
 
               </div>
-
+            </div>
             </div>
           </div>
         </div>
@@ -140,11 +147,22 @@ body {
   color: white;
 }
 
+.inputBoxDone input.larger {
+        width: 50px !important;
+        height: 50px !important;
+      }
+.itemActionbtn button{
+ margin-right: 10px;
+}
+
+
+
 button {
-  width: fit-content;
+ 
   border-color: none;
   background-color: black;
 }
+
 
 .Done {
   background-color: green;

@@ -69,10 +69,8 @@ nav ul {
  justify-content: center;
  text-align: center;
  align-self: center;
- 
  align-items: center;
  align-content: center;
- align-self: center;
   list-style: none;
 }
 nav li {

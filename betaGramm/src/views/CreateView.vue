@@ -319,7 +319,6 @@ align-content: center;
 
 
 .card {
-
   display: flex;
   flex-direction: column;
   width: inherit;

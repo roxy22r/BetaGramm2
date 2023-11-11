@@ -22,8 +22,7 @@ export default class GameService {
    }
 
    deleteGame(gameId){
-       let game =this.getGame(gameId);
-       this.games.splice(game, 1);
+       this.games=this.games.filter(item=>item.id!==gameId);
        this.setGamesInLocalStorage();
 
    }
